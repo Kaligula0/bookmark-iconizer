@@ -1,0 +1,132 @@
+﻿body {
+	font-family: "Calibri";
+}
+
+body > div {
+	padding:5px;
+	border: solid 1px lightgrey;
+	margin: 5px 0;
+}
+
+body > div:nth-child(2n) {
+	background-color: #dfdfb9;
+}
+body > div:nth-child(2n+1) {
+	background-color: #eae8cf;
+}
+
+a.external {
+	background: url(images/external.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+.noshow {
+	display: none;
+}
+
+.uln {
+	text-decoration: underline;
+}
+
+.error {
+	font-weight: bold;
+	color: red;
+}
+
+textarea {
+	font-size: 50%;
+	resize: none;
+	overflow: hidden;
+}
+
+#searchResults td,
+#addedFavicons td {
+	border: solid 1px grey;
+	min-width: 20px;
+	max-width: 800px;
+	min-height: 20px;
+	padding: 2px;
+	overflow: hidden;
+}
+
+#searchResults .icon a,
+#searchResults .base64,
+#searchResults .remove,
+#addedFavicons .add {
+	display: none;
+}
+
+
+.name {
+	min-width: 300px;
+}
+
+.icon {}
+.icon img {
+	padding: 0 2px;
+}
+tbody .icon a {
+	font-size: small;
+}
+
+.base64 {
+	min-width: 200px;
+}
+.base64 img {
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	background-image: url(images/broken.jpg);
+}
+.base64 img[src^="data"] {
+	background: none;
+}
+
+.add {
+	background-image: url(images/add.png);
+	background-position: 50%;
+	background-repeat: no-repeat;
+}
+
+.remove {
+	background-image: url(images/remove.png);
+	background-position: 50%;
+	background-repeat: no-repeat;
+}
+
+tt {
+	background-color: lightgrey;
+}
+
+#customIconLink{
+	color: -webkit-link;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#customIconNote {
+	padding:5px;
+	border: solid 1px lightgrey;
+	margin: 5px 0;
+	background-color: #dfdfb9;
+}
+
+#output{
+	margin-left: 14px;
+}
+
+#outputError {
+	color: red;
+	font-weight: bold;
+}
+
+#mainDivVoila h1 {
+	text-align: center;
+	font-size: 4em;
+}
+#mainDivVoila p {
+	text-align: center;
+	font-size: 1.5em;
+}
+#mainDivVoila p img {
+	vertical-align: middle;
+}
