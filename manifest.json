@@ -1,0 +1,23 @@
+﻿{
+	"name": "Bookmark Iconizer",
+	"version": "1.5.2",
+	"manifest_version": 2,
+
+	"description": "Set your icons for bookmarks which came without it!",
+	"homepage_url": "https://www.facebook.com/BookmarkIconizer",
+	"minimum_chrome_version": "18",
+	"permissions": [
+		"bookmarks"
+	],
+
+	"icons": {
+		"16" : "images/icon-16.png",
+		"48" : "images/icon-48.png",
+		"128" : "images/icon-128.png"
+	},
+	"browser_action": {
+		"default_icon": "images/icon.png",
+		"default_popup": "popup.html"
+	},
+	"options_page": "options.html"
+}
