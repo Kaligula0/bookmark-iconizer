@@ -1,21 +1,4 @@
 ﻿/*
-	TODO:
-		add info @ translations
-			→ http://developer.chrome.com/extensions/i18n.html
-	GLOBALS:
-		text
-			→ data:text/html of link to save the file for import, for debugging purposes
-	DEBUG:
-		text
-			→ user can write in console:
-				prompt(text)
-			and copy this and send to me.
-		importEndedDebugVersion
-			→ user can write in console:
-				importEnded=importEndedDebugVersion
-			and after the import the script won't remove the Imported folder
-*/
-/*
  * Licence CC-BY-SA 3.0 Kaligula 2013+ (script, icons)
  *  http://creativecommons.org/licenses/by-sa/3.0/
  *
@@ -178,10 +161,13 @@ function editBookmarks(){
 }
 
 function savedAndImport(){
-	toggle('#mainDivImport');
+	toggle('#mainDivImport, #mainDivVoila');
 	Scroll();
+	//scrollBy(0,90);
 }
 
+// Unfortunately Google has removed the ability to import bookmarks from Chrome extensions. 
+/*
 function removeImportedFolder(){
 	chrome.bookmarks.getTree(function(a){
 		var b=a[0].children[0].children;
@@ -208,6 +194,7 @@ function importEndedDebugVersion(){ //DEBUG!!!
 		}
 	Scroll();
 }
+*/
 
 function init() {
 	document.querySelector('#search').addEventListener('input',searchB);
@@ -216,12 +203,13 @@ function init() {
 	})
 	document.querySelector('#edit').addEventListener('click',editBookmarks);
 	document.querySelector('#saved-import').addEventListener('click',savedAndImport);
-	document.querySelector('#import').addEventListener('click',function(evt){
+	// Unfortunately Google has removed the ability to import bookmarks from Chrome extensions. 
+	/* document.querySelector('#import').addEventListener('click',function(evt){
 		chrome.bookmarks.import();
 	});
 	chrome.bookmarks.onImportEnded.addListener(function(){
 		importEnded();
-	});
+	}); */
 	document.querySelector('#search').focus();
 }
 
