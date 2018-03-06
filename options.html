@@ -19,7 +19,7 @@
 		<div>
 			<h2>1. Choose bookmarks you want to iconize</h2>
 
-			Search for the bookmarks you want to iconize (you may search by title or URI address; type in at least 3 characters <small><a href="#" title="Given 1-2 characters the search returns too many results. If your desired bookmark has less than 3 characters you may temporarily rename it! :)">why?</a></small>):<br />
+			Search for your bookmarks you want to iconize (you may search by title or URI address; type in at least 3 characters <small><a href="#" title="Given 1-2 characters the search returns too many results. If your desired bookmark has less than 3 characters you may temporarily rename it! :)">why?</a></small>) then add to worklist by clicking green "+" sign at the end of the row:<br />
 			<input type="text" name="search" value="" id="search"><br />
 			Automatic favicons are provided by Google, if your search returns too many results be aware that some of the icons my not be loaded due to query overload.<br />
 			The icon <img src="https://plus.google.com/_/favicon?domain=www.asdadadadsdasdasd.com" style="margin-bottom:-3px;"> means Google couldn't determine website's favicon, probably because the website doesn't use one.<br />
@@ -36,7 +36,7 @@
 				</tbody>
 			</table>
 			<br />
-			Click green plus sign to add bookmarks to list for further steps. Then you can search other bookmarks and repeat adding to list until you're done.<br/ >
+			Click green "+" sign to add bookmarks to list for further steps. Then you can search other bookmarks and repeat adding to list until you're done.<br/ >
 			Clicking red cross on the list below removes the bookmark from the list.<br />
 			<br/ >
 			<hr />
@@ -65,7 +65,7 @@
 					<li>(there are plenty of websites that do the same work for you, for free!)</li>
 				</ul>
 			</div>
-			Then paste the result into the field in column <tt>base64 code</tt> of the row with the bookmark which you want to use with that icon.<br />
+			Then paste the result into the field in column <tt>base64 code</tt> of the row with the bookmark which you want to use with that icon. The code should look like <tt>data:image/png;base64,iVBORw0KGgoblahblahblah…</tt><br />
 			Repeat this step for each icon you want to change.
 			<br/ ><br />
 			<button type="button" id="edit">Next step »</button>
@@ -85,10 +85,18 @@
 			<hr />
 		</div>
 		<div id="mainDivImport" class="noshow">
-			<h2>4. …and import that saved file</h2>
+			<h2>4. …import that saved file…</h2>
 
 			<button type="button" id="import" disabled>Import new bookmarks to your Google Chrome browser</button><br />
-			<p class="error">NOTE: Unfortunately Google has removed the ability to import bookmarks from Chrome extensions. You have to do this manually by: 1) opening your Bookmark manager (e.g. right-click <a href="chrome://bookmarks/" target="_blank"><em>here</em></a> and open in new tab), 2) clicking the "<em>Organize</em>" menu (below the searchbox in the manager), 3) selecting "<em>Import bookmarks from HTML file</em>" and choosing the HTML file you just saved.</p>
+			<p class="error">NOTE: Unfortunately Google has removed the ability to import bookmarks from Chrome extensions. You have to do this manually by: 1) opening your Bookmark manager (Ctrl+Shift+O), 2) clicking menu (3 dots in upper right corner of the screen), 3) selecting "<em>Import bookmarks</em>" and choosing the HTML file you just saved.</p>
+			<br/ ><br/ >
+			<hr />
+		</div>
+		<div id="mainDivRemove" class="noshow">
+			<h2>5. …and remove duplicates</h2>
+
+			<p>NOTE: Chrome imports new bookmarks to a folder at the far end of Bookmark bar. This folders name is probably "Imported" or "Imported bookmarks". You can simply remove that folder (yes, with all imported bookmarks) as those are only duplicates of your own old bookmarks, which are still in their own old places. But now they're with your new icons ;)</p>
+			<p><strong>I smell that this folder is named "<span>?</span>" (created <em>?</em>) and I can remove it for you. Click <button type="button" id="remove">here</button>.</strong></p>
 			<br/ ><br/ >
 			<hr />
 		</div>

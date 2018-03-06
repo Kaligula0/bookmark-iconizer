@@ -1,7 +1,9 @@
 ﻿{
-	"name": "Bookmark Iconizer",
-	"version": "1.5.6",
 	"manifest_version": 2,
+	"name": "Bookmark Iconizer",
+	"short_name": "Bookmark Iconizer",
+	"version": "1.6.0",
+	"author": "Kaligula",
 
 	"description": "Set your icons for bookmarks which came without it!",
 	"homepage_url": "https://www.facebook.com/BookmarkIconizer",

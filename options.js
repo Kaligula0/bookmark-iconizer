@@ -112,6 +112,8 @@ function searchB(evt){
 }
 
 function updateBase64Ico(){
+/*	if (!this.value.match(/data:/))
+		this.value = 'data:'+this.value;*/
 	this.nextSibling.src=this.value;
 }
 
@@ -161,22 +163,41 @@ function editBookmarks(){
 }
 
 function savedAndImport(){
-	toggle('#mainDivImport, #mainDivVoila');
+	toggle('#mainDivImport');
 	Scroll();
 	//scrollBy(0,90);
 }
 
+function removeImportedFolder(){
+	chrome.bookmarks.removeTree(
+		window.removeImportedFolder_id,
+		function(response){
+			console.log(response);
+			toggle('#mainDivVoila');
+			Scroll();
+			alert('Done.')
+		}
+	);
+}
+chrome.bookmarks.onImportEnded.addListener(function(){
+	chrome.bookmarks.getSubTree(
+		'1',
+		function(tree){
+			alert('It seems you\'ve imported the bookmarks. Follow the last instructions…');
+			var bbar=tree[0]['children'];
+			var folder=bbar[bbar.length-1];
+			window.removeImportedFolder_id=folder.id;
+			document.querySelector('#mainDivRemove p strong span').innerText=folder.title;
+			document.querySelector('#mainDivRemove p strong em').innerText=(new Date (folder.dateAdded));
+			document.querySelector('button#remove').addEventListener('click',removeImportedFolder);
+		}
+	);
+	toggle('#mainDivRemove');
+	Scroll();
+});
+
 // Unfortunately Google has removed the ability to import bookmarks from Chrome extensions. 
 /*
-function removeImportedFolder(){
-	chrome.bookmarks.getTree(function(a){
-		var b=a[0].children[0].children;
-		var dir=b[b.length-1];
-		chrome.bookmarks.removeTree(dir.id);
-		console.info('After import the extension removed a folder named "'+dir.title+'" which was considered as folder with just now imported bookmarks.');
-	});
-}
-
 function importEnded(){
 	removeImportedFolder();
 	toggle('#mainDivVoila');
