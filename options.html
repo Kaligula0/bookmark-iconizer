@@ -54,18 +54,18 @@
 			</table>
 			<br />
 			You can either use the icon in the table or choose another, custom icon (remember, the size should be 16×16 px and the best format is PNG with transparent background!).<br />
-			For icons from the table above just click the link <tt>[get code]</tt> right by the icon. 
-			(<em>In case of a bookmarklet or custom icon or if the [get code] link doesn't work – click <span id="customIconLink">here</span>.</em>)<br />
+			For icons from the table above just click the link <tt>[get code]</tt> right by the icon. (<em>The data is provided by an external PHP script. If I wanted to include the function inside this extension it would require in consuming more of your computer resources and giving more permissions for this extesion to reach your data. I'd rather avoid this.</em>)
+			<br />
+			In case of a bookmarklet or a custom icon or if the [get code] link doesn't work – click <span id="customIconLink">here</span>.<br />
 			<div id="customIconNote" class="noshow">
-				For making custom icons I use MS Paint and then Gimp (for transparency). Then you may use one of the websites to convert the icon to base64:
+				For making custom icons I use MS Paint and then IrfanView or Gimp (for transparency). Then you may use one of the websites (still working in 2020) to convert the icon to base64:
 				<ul>
-					<li><a href="http://www.pjhome.net/web/html5/encodeDataUrl.htm" class="external" target="_blank">pjhome.net</a> – simply drag&drop downloaded icon/image onto their site (e.g. you can right-click the icon above, save it (it'll show on the bottom bar of downloaded files – do not close it!), then go to that page and simply drag the icon file from the bottom bar and drop on the site)</li>
-					<li><a href="http://dataurl.net/#dataurlmaker" class="external" target="_blank">dataurl.net</a> – upload there any icon/image</li>
-					<li><a href="http://www.greywyvern.com/code/php/binary2base64" class="external" target="_blank">greywyvern.com</a> – specify direct URI to an icon/image, without downloading and uploading</li>
+					<li><a href="http://www.pjhome.net/web/html5/encodeDataUrl.htm" class="external" target="_blank">pjhome.net</a> – simply drag&drop downloaded icon/image onto their site (e.g. you can right-click one of the icons in the table above, save it (it'll show on the bottom bar of downloaded files – do not close it!), then go to that page and simply drag the icon file from the bottom bar and drop on the site)</li>
+					<li><a href="https://www.base64-image.de/" class="external" target="_blank">base64-image.de</a> – same as above</li>
 					<li>(there are plenty of websites that do the same work for you, for free!)</li>
 				</ul>
 			</div>
-			Then paste the result into the field in column <tt>base64 code</tt> of the row with the bookmark which you want to use with that icon. The code should look like <tt>data:image/png;base64,iVBORw0KGgoblahblahblah…</tt><br />
+			Then paste the result into the field in column <tt>base64 code</tt> of the row with the bookmark which you want to use with that icon. <strong>REMEMBER! The code should have the prefix <tt><u>data:image/png;base64,</u></tt> and finally look like <tt><u>data:image/png;base64,</u>iVBORw0KGgoBlahBlahBlahLongLongLongWayLongerThanThis…</tt></strong><br />
 			Repeat this step for each icon you want to change.
 			<br/ ><br />
 			<button type="button" id="edit">Next step »</button>
@@ -95,8 +95,8 @@
 		<div id="mainDivRemove" class="noshow">
 			<h2>5. …and remove duplicates</h2>
 
-			<p>NOTE: Chrome imports new bookmarks to a folder at the far end of Bookmark bar. This folders name is probably "Imported" or "Imported bookmarks". You can simply remove that folder (yes, with all imported bookmarks) as those are only duplicates of your own old bookmarks, which are still in their own old places. But now they're with your new icons ;)</p>
-			<p><strong>I smell that this folder is named "<span>?</span>" (created <em>?</em>) and I can remove it for you. Click <button type="button" id="remove">here</button>.</strong></p>
+			<p>NOTE: Chrome imports new bookmarks to a folder at the far end of Bookmark bar. This folder's name is probably "Imported" or "Imported bookmarks" (maybe in your systems language). They are all duplicates of your bookmarks. All your original bookmarks are in their original places. But now they're with your new icons ;) You can simply remove the new folder (yes, with all imported bookmarks).</p>
+			<p class="error"><strong>I smell that this folder is named "<span>?</span>" (created <em>?</em>) and I can remove it for you. Click <button type="button" id="remove">here</button>.</strong></p>
 			<br/ ><br/ >
 			<hr />
 		</div>

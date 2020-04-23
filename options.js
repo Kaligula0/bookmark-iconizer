@@ -62,7 +62,7 @@ function searchResults(r) {
 			c.appendChild(ico);
 		if(icosrc){
 			l=document.createElement('a');
-				l.setAttribute('href','http://www.y0c0.c0.pl/b/64.php?domain='+icosrc);
+				l.setAttribute('href','http://www.kaligula.uk/base64/?domain='+icosrc);
 				l.setAttribute('target','_blank');
 				l.innerText = '[get code]';
 				l.className = 'external';
@@ -173,7 +173,6 @@ function removeImportedFolder(){
 		window.removeImportedFolder_id,
 		function(response){
 			console.log(response);
-			toggle('#mainDivVoila');
 			Scroll();
 			alert('Done.')
 		}
@@ -188,11 +187,12 @@ chrome.bookmarks.onImportEnded.addListener(function(){
 			var folder=bbar[bbar.length-1];
 			window.removeImportedFolder_id=folder.id;
 			document.querySelector('#mainDivRemove p strong span').innerText=folder.title;
-			document.querySelector('#mainDivRemove p strong em').innerText=(new Date (folder.dateAdded));
+			document.querySelector('#mainDivRemove p strong em').innerText=(new Date (folder.dateAdded).toGMTString());
 			document.querySelector('button#remove').addEventListener('click',removeImportedFolder);
 		}
 	);
 	toggle('#mainDivRemove');
+	toggle('#mainDivVoila');
 	Scroll();
 });
 
