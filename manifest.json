@@ -1,13 +1,12 @@
 ﻿{
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "Bookmark Iconizer",
 	"short_name": "Bookmark Iconizer",
-	"version": "1.7.1",
+	"version": "1.7.2",
 	"author": "Kaligula",
 
 	"description": "Set your icons for bookmarks which came without it!",
 	"homepage_url": "https://www.facebook.com/BookmarkIconizer",
-	"minimum_chrome_version": "18",
 	"permissions": [
 		"bookmarks"
 	],
@@ -17,7 +16,7 @@
 		"48" : "images/icon-48.png",
 		"128" : "images/icon-128.png"
 	},
-	"browser_action": {
+	"action": {
 		"default_icon": "images/icon.png",
 		"default_popup": "popup.html"
 	},
