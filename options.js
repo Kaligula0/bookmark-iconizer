@@ -149,7 +149,7 @@ function editBookmarks(){
 		for(var i=0;i<rows.length;i++){
 			var name=rows[i].querySelector('td.name a, td.name span').innerText;
 				if(name=='(bookmark without name)')name='';
-			var url=rows[i].querySelector('td.name a, td.name span').getAttribute('title').replace(/"/g,'&quot;');
+			var url=rows[i].querySelector('td.name a, td.name span').getAttribute('title').replace(/"/g,'&quot;').replace(/#/g,'%23');
 			var dateadded=rows[i].querySelector('td.name a, td.name span').getAttribute('dateadded').substring(0,10);
 			var icon=rows[i].querySelector('td.base64 textarea').value;
 			text+='%09<DT><A HREF="'+url+'" ADD_DATE="'+dateadded+'" ICON="'+icon+'">'+name+'</A>%0D%0A';
